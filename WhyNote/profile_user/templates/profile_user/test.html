@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'profile_user/css/assets.css' %}">
+
+    <title>Регистрация</title>
+
+  </head>
+  <body>
+  <div class="content_zone2">
+        <div class="fon_registr">
+            <div class="logo_registr">
+                <img src="{% static 'profile_user/img/logo_registr.png' %}">
+            </div>
+            <h1>Регистрация</h1>
+            <form required method="post">
+
+              {% csrf_token %}
+              <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+              {% for f in form %}
+              <div>
+                <label  for="{{ f.id_for_label }}" class="email_registr">{{ f.label }}</label>
+              </div>
+              {{ f }}
+              <p>{{ f.errors }}</p>
+              {% endfor %}
+              <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+  </div>
+  </body>
+</html>

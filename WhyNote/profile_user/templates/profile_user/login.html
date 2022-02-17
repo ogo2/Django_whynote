@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'profile_user/css/assets.css' %}">
+    <title>Войти</title>
+
+
+</head>
+
+
+<body>
+    <div class="content_zone2">
+        <div class="fon_registr">
+            <div class="logo_registr">
+                <img src="{% static 'profile_user/img/logo_registr.png' %}">
+            </div>
+            <h1>Войти</h1>
+            <form required method="post">
+                {% csrf_token %}
+                <p>{{form.non_field_errors}}</p>
+                <div class="form_registr">
+                    <div>
+                        <label  for="{{ forms.username.id_for_label }}" class="email_registr">{{ form.username.label }}</label>
+                    </div>
+                    {{ form.username }}
+<!--                    <input required class="email_input" type="text" aria-invalid="false"-->
+<!--                           id="email"-->
+<!--                           placeholder="Логин">-->
+
+                    <div>
+                        <label for="{{ forms.password.id_for_label }}" class="email_registr">{{ form.password.label }}</label>
+                    </div>
+                    {{ form.password }}
+<!--                    <input required type="password" class="email_input" aria-invalid="false"-->
+<!--                           id="name"-->
+<!--                           placeholder="Пароль">-->
+                    <div>
+                </div>
+                <button class="but_registr" formaction="" value="{{ user.get_username }}" name="dzen" type="submit">Войти</button>
+
+            </form>
+        </div>
+    </div>
+</body>

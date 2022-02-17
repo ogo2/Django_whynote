@@ -1,0 +1,32 @@
+{% extends 'profile_user/base_index.html' %}
+
+{% load static %}
+{% block title %}{{Статьи}}{% endblock %}
+
+        {% block content %}
+            <h1>Журнал</h1>
+
+            <div class="magazine_block">
+                {% for inf in article %}
+                <a href="{% url 'article_page' inf.share %}"><div class="magazine_news">
+                    <img src="/media/{{inf.photo}}">
+                    <div class="ten_magazine"></div>
+                    <div class="text_block_magazine">
+                        <h1>{{inf.title}}</h1>
+                        <p>{{inf.text}}</p>
+                    </div>
+                </div></a>
+                {% endfor %}
+
+            </div>
+            <div class="music_menu2">
+                <ul>
+                    <li><button class="music_but_menu">Новости</button></li>
+                    <li><button class="music_but_menu">Декодинг</button></li>
+                    <li><button class="music_but_menu">Рецензия на релиз</button></li>
+                    <li><button class="music_but_menu">Перевод песни</button></li>
+                    <li><button class="music_but_menu">Мои записи</button></li>
+
+                </ul>
+            </div>
+        {% endblock %}

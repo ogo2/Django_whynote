@@ -1,0 +1,62 @@
+.slider_news{
+    width: 100%;
+    /*height: 430px;*/
+    /*overflow: hidden;*/
+    /*background-color: #4CAF50;*/
+}
+.previous{
+    width: 22px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.6;
+    z-index: 4;
+    left: 15%;
+    top:120px;
+    display:block;
+    background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-left.png") no-repeat;
+}
+.next{
+    width: 22px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.6;
+    z-index: 4;
+    left: 85%;
+    top:80px;
+    display: block;
+    background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-right.png") no-repeat;
+}
+.previous_playlist{
+    width: 22px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.6;
+    z-index: 4;
+    left: 0%;
+    top:50%;
+    display: block;
+    background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-left.png") no-repeat;
+}
+.next_playlist{
+    width: 22px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.6;
+    z-index: 4;
+    left: 90%;
+    top:50%;
+    display: block;
+    background: url("http://pvbk.spb.ru/inc/slider/sim-files/sim-arrow-right.png") no-repeat;
+}
+.block_news{
+    width: 70%;
+    /*display: inline-block;*/
+    /*background-color: #4CAF50;*/
+    position: relative;
+    margin-top: -8%;
+    left:15%;
+}

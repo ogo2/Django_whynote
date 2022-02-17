@@ -1,0 +1,183 @@
+{% extends 'profile_user/base_index.html' %}
+
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+
+
+        {% block content %}
+            <a href="playlists_chart.html" ><h1>Плейлисты</h1></a>
+            <div class="playlists">
+<!--                <a class="previous_playlist"></a>-->
+<!--                <a class="next_playlist"></a>-->
+                    <div class="block_playlist">
+                        <div class="ten2">
+                            <img class="ten" src="{% static 'profile_user/img/fmyu6vgY_LQ.jpg' %}">
+                        </div>
+                        <div class="ten"></div>
+                        <div class="photo_playlist">
+
+                            <img src="{% static 'profile_user/img/fmyu6vgY_LQ.jpg' %}">
+                            <button value="A-AP Rocky-Wassup-kissvk.com" class="playlist_play"></button>
+
+                        </div>
+                        <div class="block_playlist_text">
+                            <h3><a href="playlist.html">Самый мрачный жанр </a></h3>
+                        </div>
+                    </div>
+                    <div class="block_playlist">
+                        <div class="ten2">
+                            <img class="ten" src="{% static 'profile_user/img/ZXTrToDCOWE.jpg' %}">
+                        </div>
+                        <div class="ten"></div>
+                        <div class="photo_playlist">
+                            <img src="{% static 'profile_user/img/ZXTrToDCOWE.jpg' %}">
+                            <button value="A-AP Rocky-Wassup-kissvk.com" class="playlist_play"></button>
+
+                        </div>
+                        <div class="block_playlist_text">
+                            <h3><a href="playlist.html">Музыка для секса</a></h3>
+
+                        </div>
+
+                    </div>
+                    <div class="block_playlist">
+                        <div class="ten2">
+                            <img class="ten" src="{% static 'profile_user/img/Z1kqZIfrfHE.jpg' %}">
+                        </div>
+                        <div class="ten"></div>
+                        <div class="photo_playlist">
+                            <img src="{% static 'profile_user/img/Z1kqZIfrfHE.jpg' %}">
+                            <button value="A-AP Rocky-Palace-kissvk.com" class="playlist_play"></button>
+
+                        </div>
+                        <div class="block_playlist_text">
+                            <h3><a href="playlist.html">Отдохни</a></h3>
+                        </div>
+
+                    </div>
+                    <div class="block_playlist">
+                        <div class="ten2">
+                            <img class="ten" src="{% static 'profile_user/img/WfaxIF1M1Yo.jpg' %}">
+                        </div>
+                        <div class="ten"></div>
+                        <div class="photo_playlist">
+                            <img src="{% static 'profile_user/img/WfaxIF1M1Yo.jpg' %}">
+                            <button value="A-AP Rocky-Peso-kissvk.com" class="playlist_play"></button>
+
+                        </div>
+                        <div class="block_playlist_text">
+                            <h3><a href="playlist.html">Война - дело молодых </a></h3>
+                        </div>
+
+                    </div>
+            </div>
+            <!--                <h1>Музыка</h1>-->
+            <h1>Чарт</h1>
+
+            <div class="songs_full">
+                <div class="track">
+                    <div class="shadow_track">
+                        <p class="name_song">Name song</p>
+                        <a href="artist_page.html" class="name_artist">Name artist</a>
+                        <a href="artist_page.html" class="name_artist">Name artist2</a>
+
+                        <button value="val_play1"><a href="#" download="songs/A-AP Rocky-Palace-kissvk.com.mp3"><img src="{% static 'profile_user/img/donwload.png' %}"></a></button>
+                        <div class="time_track">2:33</div>
+
+                    </div>
+                    <div class="photo_track">
+                        <img class="photo_track_img" src="{% static 'profile_user/img/z4wN1DUfpkI.jpg' %}">
+                        <div class="black_img">
+                            <button value="A-AP Rocky-Wassup-kissvk.com" id="1" class="buter_track2"></button>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="track">
+                    <div class="shadow_track">
+                        <p class="name_song">Name song</p>
+                        <a href="artist_page.html" class="name_artist">Name artist</a>
+                        <button value="val_play1"><a href="#" download="songs/A-AP Rocky-Palace-kissvk.com.mp3"><img src="{% static 'profile_user/img/donwload.png' %}"></a></button>
+                        <div class="time_track">2:33</div>
+                    </div>
+                    <div class="photo_track">
+                        <img class="photo_track_img"  src="{% static 'profile_user/img/bJc1HFQliq0.jpg' %}">
+                        <div class="black_img" >
+                            <button value="A-AP Rocky-Peso-kissvk.com" id="2" class="buter_track2"></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="track">
+                    <div class="shadow_track">
+                        <p class="name_song">Name song</p>
+                        <a href="artist_page.html" class="name_artist">Name artist</a>
+                        <button value="val_play1"><a href="#" download="songs/A-AP Rocky-Palace-kissvk.com.mp3"><img src="{% static 'profile_user/img/donwload.png' %}"></a></button>
+                        <div class="time_track">2:33</div>
+                    </div>
+                    <div class="photo_track">
+                        <img class="photo_track_img" src="{% static 'profile_user/img/ucZop-v8KI8.jpg' %}">
+                        <div class="black_img">
+                            <button value="A-AP Rocky-Palace-kissvk.com" id="3" class="buter_track2"></button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <h1>Новости в мире музыки</h1>
+
+            <div class="slider_news">
+                <a class="previous"></a>
+                <a class="next"></a>
+                <div class="block_news" id="slide_1">
+                    <div class="news">
+                        <h2><a href="news.html">Name news</a></h2>
+                        <img src="{% static 'profile_user/img/z4wN1DUfpkI.jpg' %}">
+                        <p>Не следует, однако, забывать о том, что постоянный
+                            количественный рост и сфера нашей активности
+                            позволяет оценить значение дальнейших
+                            направлений развитая...</p>
+                        <a href="news.html"><div class="button_news_link">Читать дальше</div></a>
+                    </div>
+
+                </div>
+                <div class="block_news" id="slide_2" style="display: none">
+                    <div class="news">
+                        <h2><a href="news.html">Name news</a></h2>
+                        <img src="{% static 'profile_user/img/7b-jCoSyNis.jpg' %}">
+                        <p>Не следует, однако, забывать о том, что постоянный
+                            количественный рост и сфера нашей активности
+                            позволяет оценить значение дальнейших
+                            направлений развитая...</p>
+                        <a href="news.html"><div class="button_news_link">Читать дальше</div></a>
+                    </div>
+                </div>
+                <div class="block_news" id="slide_3" style="display: none">
+                    <div class="news">
+                        <h2><a href="news.html">Name news</a></h2>
+                        <img src="{% static 'profile_user/img/CbLa3jkbP2o.jpg' %}">
+                        <p>Не следует, однако, забывать о том, что постоянный
+                            количественный рост и сфера нашей активности
+                            позволяет оценить значение дальнейших
+                            направлений развитая...</p>
+                        <a href="news.html"><div class="button_news_link">Читать дальше</div></a>
+                    </div>
+                </div>
+                <div class="block_news" id="slide_4" style="display: none">
+                    <div class="news">
+                        <h2><a href="news.html">Name news</a></h2>
+                        <img src="{% static 'profile_user/img/WZmtgVtvx24.jpg' %}">
+                        <p>Не следует, однако, забывать о том, что постоянный
+                            количественный рост и сфера нашей активности
+                            позволяет оценить значение дальнейших
+                            направлений развитая...</p>
+                        <a href="news.html"><div class="button_news_link">Читать дальше</div></a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+

@@ -1,0 +1,154 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'profile_user/css/assets.css' %}">
+    <title>Регистрация</title>
+
+
+</head>
+
+
+<body>
+    <div class="content_zone2">
+        <div class="fon_registr">
+            <div class="logo_registr">
+                <img src="{% static 'profile_user/img/logo_registr.png' %}">
+            </div>
+            <h1>Регистрация</h1>
+            <form required action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <div>
+                <div class="block_up_photo">
+                    <input required id="input__file" type="file" name="file" class="up_photo"/>
+                    <label for="input__file" class="input__file-button">
+                        <span class="input__file-icon-wrapper">
+                            <img class="input__file-icon" src="{% static 'profile_user/img/170201_4e78fa049f6a718ee015d50c88d4708f-removebg-preview.png' %}" alt="Выбрать фото" ></span>
+<!--                        <span class="input__file-button-text">Выберите фото</span>-->
+                    </label>
+                </div>
+            </div>
+            <div class="form_registr">
+                <div>
+                    <label  for="email" class="email_registr">Ваш адрес электронной почты</label>
+                </div>
+                <input required class="email_input" type="email" aria-invalid="false"
+                       id="email"
+                       placeholder="Введите ваш адресс E-mail">
+                <div>
+                    <div class="pass">
+                        <div>
+                            <label for="password" class="email_registr">Придумайте пароль</label>
+                        </div>
+                        <input required class="email_input" type="password" aria-invalid="false"
+                               id="password"
+                               placeholder="Придумайте пароль">
+                    </div>
+                    <div class="pass">
+                        <div>
+                        <label for="rep-password" class="email_registr">Придумайте пароль</label>
+                        </div>
+                        <input required class="email_input" type="password" aria-invalid="false"
+                               id="rep-password"
+                               placeholder="Придумайте пароль">
+                    </div>
+                </div>
+                <div>
+                    <label for="name" class="email_registr">Ваше имя</label>
+                </div>
+                <input required class="email_input" aria-invalid="false"
+                       id="name"
+                       placeholder="Укажите своё имя">
+                <div>
+                <div>
+                    <label for="about_me" class="email_registr">Расскажите о себе</label>
+                </div>
+                <textarea  required class="email_input" aria-invalid="false"
+                       id="about_me"
+                           placeholder="Расскажите о себе"></textarea>
+                <div>
+                    <div>
+                        <label class="email_registr">Ваша дата рождения</label>
+                    </div>
+                    <div>
+                        <label class="email_regist2">Год</label>
+                    </div>
+                    <select name="theme" required="required">
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                        <option>2006</option>
+                        <option>2005</option>
+                        <option>2004</option>
+                        <option>2003</option>
+                        <option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
+                        <option>1999</option>
+                        <option>1998</option>
+                        <option>1997</option>
+                        <option>1996</option>
+                        <option>1995</option>
+                        <option>1994</option>
+                        <option>1993</option>
+                        <option>1992</option>
+                        <option>1991</option>
+                        <option>1990</option>
+                        <option>1989</option>
+                        <option>1988</option>
+                        <option>1987</option>
+                        <option>1986</option>
+                        <option>1985</option>
+                        <option>1984</option>
+                        <option>1983</option>
+                        <option>1982</option>
+                        <option>1981</option>
+                        <option>1980</option>
+                        <option>1979</option>
+                        <option>1978</option>
+                        <option>1977</option>
+                        <option>1976</option>
+                        <option>1975</option>
+                        <option>1974</option>
+                        <option>1973</option>
+                        <option>1972</option>
+                        <option>1971</option>
+                        <option>1970</option>
+                    </select>
+                    <div>
+                        <label for="gender" class="email_registr">Укажите ваш пол</label>
+                    </div>
+<!--                    <div class="gender_block">-->
+                        <div class="gender_on">
+                            <p><input type="radio" name="dzen" id="gender" class="dzen"  value="a2">Мужчина</p>
+                        </div>
+                        <div class="gender_on">
+                            <p><input type="radio" name="dzen" id="gender" class="dzen"  value="a2">Женщина</p>
+                        </div>
+                        <div class="gender_on">
+                            <p><input type="radio" name="dzen" id="gender" class="dzen" value="a2">Оно</p>
+                        </div>
+                    </div>
+                    <button class="but_registr" name="dzen" type="submit">Зарегистрироваться</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>

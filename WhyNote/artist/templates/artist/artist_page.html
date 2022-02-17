@@ -1,0 +1,64 @@
+{% extends 'profile_user/base.html' %}
+
+{% load static %}
+{% block title %}{{Статьи}}{% endblock %}
+
+        {% block content %}
+            <div class="header_artist">
+                <div class="shadow_header_artist">
+
+                <img src="/media/{{artist_info.header_photo}}">
+                </div>
+                    <div class="avatar_artist">
+                        <img src="/media/{{artist_info.photo}}">
+                    </div>
+                <h1>{{artist_info.name_artist}}</h1>
+            </div>
+
+            <div class="music_profile">
+                <h1>Все песни</h1>
+
+                <div class="songs_full2">
+                    <div class="track">
+                        <div class="shadow_track2">
+                            <p class="name_song2">Name song</p>
+                            <a href="#" class="name_artist">Name artist</a>
+                            <button value="val_play1"><a href="#" download="songs/A-AP Rocky-Palace-kissvk.com.mp3"><img src="img/donwload.png"></a></button>
+                            <div class="time_track">2:33</div>
+
+                        </div>
+                        <div class="photo_track">
+                            <img class="photo_track_img" src="img/z4wN1DUfpkI.jpg">
+                            <div class="black_img">
+                                <button value="A-AP Rocky-Wassup-kissvk.com" id="play1" class="buter_track2"></button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="track">
+                        <div class="shadow_track2">
+                            <p class="name_song2">Name song</p>
+                            <a href="#" class="name_artist">Name artist</a>
+                            <button value="val_play1"><a href="#" download="songs/A-AP Rocky-Palace-kissvk.com.mp3"><img src="img/donwload.png"></a></button>
+                            <div class="time_track">2:33</div>
+
+                        </div>
+                        <div class="photo_track">
+                            <img class="photo_track_img" src="img/z4wN1DUfpkI.jpg">
+                            <div class="black_img">
+                                <button value="A-AP Rocky-Wassup-kissvk.com" id="play1" class="buter_track2"></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="music_menu">
+                    <ul>
+                        <li><button class="music_but_menu">Все песни</button></li>
+                        <li><button class="music_but_menu">Альбомы</button></li>
+                    </ul>
+                </div>
+            </div>
+        {% endblock %}

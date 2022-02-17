@@ -1,0 +1,102 @@
+{% extends 'profile_user/base.html' %}
+
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block content %}
+<div class="profile_info_block">
+    <div class="profile_photo_block">
+        <div class="profile_photo">
+            {% if info_user.photo %}
+                <img src="/media/{{ info_user.photo }}">
+
+            {% else %}
+                <img src="{% static '/profile_user/img/pepe_user_photo.jpg' %}">
+            {% endif %}
+        </div>
+        <a href="#1">Подписаться</a>
+        <div class="sub_block">
+            <ul>
+                <li><a href="#sub1">Подписки</a></li>
+                <li>0</li>
+            </ul>
+            <div class="sub_block_line"></div>
+            <ul class="right_ul">
+                <li><a href="#sub2">Подписчиков</a></li>
+                <li>0</li>
+            </ul>
+        </div>
+    </div>
+    <div class="info_profile_block">
+
+        <div class="name_profile">
+            <h1>{{ name_user }}</h1>
+        </div>
+        <div class="country_profile">
+        <h3>Страна:</h3>
+            <p>Russion Federation</p>
+        </div>
+        <div class="about_me_profile">
+            <h3>Обо мне:</h3>
+            <p>{{info_user.about_me}}</p>
+        </div>
+        <ul>
+            <li><a href="https://www.youtube.com/channel/UCfgKfMo-zs9cjTyF0iQYsxA"><img src="{% static 'profile_user/img/youtub%202.png' %}"></a></li>
+            <li><a href="https://www.instagram.com/lockedclub/"><img src="{% static 'profile_user/img/insta%202.png' %}"></a></li>
+            <li><a href="https://vk.com/lockedclub"><img src="{% static 'profile_user/img/vk%203.png' %}"></a></li>
+        </ul>
+    </div>
+</div>
+<div class="line_profile"></div>
+<div class="music_profile">
+    <h1>Все песни</h1>
+
+    <div class="songs_full2">
+
+    </div>
+    <div class="music_menu">
+        <ul>
+            <li><button class="music_but_menu">Все песни</button></li>
+            <li><button class="music_but_menu">Альбомы</button></li>
+            <li><button class="music_but_menu">Загруженные песни</button></li>
+            <li><button class="music_but_menu">Плейлисты</button></li>
+
+        </ul>
+    </div>
+</div>
+{% endblock %}
+{% block popup_sub %}
+<div id="sub1" class="popup">
+    <a href="" class="popup_area"></a>
+    <div class="popup_body">
+        <div class="popup_content">
+            <h1>Подписки</h1>
+            {% for name in users %}
+            <button onclick="window.location.href = 'profile.html';" class="block_sub_name">
+                <div class="photo_sub_block">
+                    <a href="profile.html"><img src="img/dcvQXjvEoI8.jpg"></a>
+                </div>
+                <a class="a_sub_block" href="{% url 'profile' name.username %}"><h3>{{ name.username }}</h3></a>
+            </button>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<div id="sub2" class="popup">
+    <a href="" class="popup_area"></a>
+    <div class="popup_body">
+        <div class="popup_content">
+            <h1>Подписки</h1>
+            {% for name in users %}
+            <button onclick="window.location.href = 'profile.html';" class="block_sub_name">
+                <div class="photo_sub_block">
+                    <a href="profile.html"><img src="img/dcvQXjvEoI8.jpg"></a>
+                </div>
+                <a class="a_sub_block" href="{% url 'profile' name.username %}"><h3>{{ name.username }}</h3></a>
+            </button>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

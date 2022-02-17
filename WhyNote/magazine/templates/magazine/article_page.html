@@ -1,0 +1,84 @@
+{% extends 'profile_user/base_index.html' %}
+
+{% load static %}
+{% block title %}{{Статьи}}{% endblock %}
+
+        {% block content %}
+            <p class="date">29.11.2021</p>
+            <p class="date">Новости</p>
+            <div class="photo_news">
+                <img src="/media/{{article.photo}}">
+            </div>
+            <div class="news_text">
+                <h1>{{article.title}}
+                </h1>
+                <br>
+                <br>
+
+                <p>{{article.text}}</p>
+            </div>
+            <div class="info_avtor_news">
+                <a href="profile.html"><div class="name_avtor_news">
+                    <div class="photo_avtor_news">
+                        {% if user_info.photo %}
+                        <a href="{% url 'profile' article.name_user %}"><img src="/media/{{ user_info.photo }}"></a>
+
+                        {% else %}
+                        <a href="{% url 'profile' article.name_user %}"><img src="{% static '/profile_user/img/pepe_user_photo.jpg' %}"></a>
+                        {% endif %}
+<!--                        <a href="{% url 'profile' article.name_user%}"><img src="/media/{{user_info.photo}}"></a>-->
+                    </div>
+                    <a href="{% url 'profile' article.name_user%}"><h1>{{article.name_user}}</h1></a>
+                </div></a>
+                <div class="like_block">
+                    <form>
+                        <li>
+                            <input id="like" type="image" src="img/like.png" value="like">
+                            <label for="like">0</label>
+                        </li>
+                        <li>
+                            <input id="dislike" type="image" src="img/dislike.png" value="dislike">
+                            <label for="like">0</label>
+                        </li>
+                    </form>
+                </div>
+                <h3>Комментарии</h3>
+                <div class="komment_block">
+                    <div class="komment">
+                        {% for comm_inf in comment_info %}
+                        <div class="komment_one">
+                            <div class="komment_name_and_photo">
+                                <div class="komment_photo_block">
+                                    {% if comm_inf.user_name.profile.photo %}
+                                    <a href="{% url 'profile' comm_inf.user_name %}"><img src="/media/{{ comm_inf.user_name.profile.photo }}"></a>
+
+                                    {% else %}
+                                    <a href="{% url 'profile' comm_inf.user_name %}"><img src="{% static '/profile_user/img/pepe_user_photo.jpg' %}"></a>
+                                    {% endif %}
+<!--                                    <a href="profile.html"><img src="/media/{{comm_inf.user_name.profile.photo}}"></a>-->
+                                </div>
+                                <a href="{% url 'profile' comm_inf.user_name %}"><h1>{{comm_inf.user_name}}</h1></a>
+                                <a href="{% url 'profile' comm_inf.user_name %}"><h1>{{comment_info.user_name.profile.photo}}</h1></a>
+
+                            </div>
+                            <div class="text_komment">
+                                {{comm_inf.text}}
+                            </div>
+                        </div>
+                        <div class="line_news"></div>
+                        {% endfor %}
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.text }}
+                        {{ form.errors }}
+<!--                        <textarea cols='32' placeholder="Добавить коментарий"></textarea>-->
+                        <p><button type="submit">Добавить</button></p>
+                    </form>
+
+                </div>
+                <input type="text" value="http://localhost:63342/WhyNote/news.html?_ijt=825obb7jfk1454ndrdo061d4ia#popup" id="myInput" style="display: none">
+
+                <p class="p_but"><button onclick="myFunction()" id="share_news" class="share_news" value="http://localhost:63342/WhyNote/news.html?_ijt=825obb7jfk1454ndrdo061d4ia#popup">SHARE</button></p>
+            </div>
+        {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'profile_user/base.html' %}
+
+{% load static %}
+{% block title %}{{Статьи}}{% endblock %}
+
+        {% block content %}
+            <h2>Артисты</h2>
+            <div class="atists_block">
+                {% for inf in artist %}
+                <a href="{% url 'artist_page' inf.name_artist %}" ><div class="atist">
+                    <div class="ten2">
+                        <img class="ten" src="/media/{{inf.photo}}">
+                    </div>
+                    <div class="artis_photo">
+                        <img src="/media/{{inf.photo}}">
+                    </div>
+                    <h3>{{inf.name_artist}}</h3>
+                </div></a>
+                {% endfor %}
+
+            </div>
+            <form class="form_artist">
+                <div class="search_artis">
+                    <input class="inp_text2" type="text" name="search" size="40" placeholder="Поиск артиста.....">
+                </div>
+                <select class="genre_artist_page" name="theme" required="required">
+                    <option>Жанр</option>
+                    <option>Транс</option>
+                    <option>Хип-хоп</option>
+                    <option>Драм-н-бейс</option>
+                    <option>Name</option>
+                </select>
+                <select class="genre_artist_page" name="theme" required="required">
+                    <option>Пол</option>
+                    <option>Мужской</option>
+                    <option>Женский</option>
+                </select>
+            </form>
+            <div class="line_artis"></div>
+        {% endblock %}

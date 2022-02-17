@@ -1,0 +1,29 @@
+{% extends 'profile_user/base.html' %}
+
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+        <div class="block_up_photo_upload_img">
+            {{form.photo}}
+<!--            <input id="input__file" type="file" name="file" class="up_photo"/>-->
+            <label for="id_photo" class="upload_file_img33">
+                <span class="blyat">
+                    <img class="icon_upload_img_track" src="{% static 'profile_user/img/upload_song.png' %}" alt="Выбрать фото" ></span>
+                <span class="upload-button-text2">Загрузить изображение</span>
+            </label>
+        </div>
+
+        <div required class="form_donwload_song">
+            <ul>
+                <li><label for="name_song_input">Название статьи</label></li>
+                <li>{{form.title}}</li>
+                <li><label for="name_song_input">Текст</label></li>
+                <li><li>{{form.text}}</li></li>
+
+            </ul>
+            <button type="submit" class="state_button">Опубликовать</button>
+        </div>
+</form>
+{% endblock %}
