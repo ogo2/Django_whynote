@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('profile_user.urls')),
     path('', include('artist.urls')),
     path('', include('magazine.urls')),
+    path('', include('music.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

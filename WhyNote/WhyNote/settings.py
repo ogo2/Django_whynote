@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'chart.apps.ChartConfig',
     'artist.apps.ArtistConfig',
     'magazine.apps.MagazineConfig',
-    'likes.apps.LikesConfig'
+    'music.apps.MusicConfig',
+    'allauth',
+    'allauth.account',
+
 ]
 
 MIDDLEWARE = [
@@ -85,7 +88,10 @@ DATABASES = {
     }
 }
 
-
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 TEMPLATE_CONTEXT_PROCESSORS = (
